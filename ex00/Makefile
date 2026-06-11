@@ -6,7 +6,7 @@
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/21 11:41:44 by asauvage          #+#    #+#              #
-#    Updated: 2026/05/21 15:15:40 by asauvage         ###   ########.fr        #
+#    Updated: 2026/06/11 13:15:10 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME): $(OBJS)
 		$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-		$(CXX) $(CXXFLAGS) $(OBJS) -c $< -o $@
+		$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 		rm -f $(OBJS)
