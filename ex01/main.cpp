@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/21 15:18:51 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/01 15:11:57 by asauvage         ###   ########.fr       */
+/*   Created: 2026/06/29 15:58:10 by asauvage          #+#    #+#             */
+/*   Updated: 2026/07/01 13:59:29 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-# include <iostream>
-# include <string>
+int main(void)
+{
+	PhoneBook	Phone_Book;
 
-class Contact{
-	private:
-		std::string	firstName_;
-		std::string lastName_;
-		std::string nickname_;
-		std::string phoneNumber_;
-		std::string darkestSecret_;
-	public:
-		Contact();
-		~Contact();
-		void SetInput(std::string input, std::string field);
-};
-
-#endif
+	std::string	line;
+	std::cout << "Entre une cmd : ADD, SEARCH, EXIT" << std::endl;
+	while (std::getline(std::cin, line))
+	{
+		if (line == "EXIT")
+			exit (1);
+		if (line == "ADD")
+			Phone_Book.add();
+		std::cout << "Entre une cmd : ADD, SEARCH, EXIT" << std::endl;
+	}
+}

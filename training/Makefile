@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/05/21 15:17:35 by asauvage          #+#    #+#              #
-#    Updated: 2026/07/01 14:49:57 by asauvage         ###   ########.fr        #
+#    Created: 2026/06/16 10:32:54 by asauvage          #+#    #+#              #
+#    Updated: 2026/06/16 10:33:37 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,9 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = PhoneBook
+NAME = inventory
 
-SRCS = PhoneBook.cpp \
-	   main.cpp \
-	   Contact.cpp \
-	   utils.cpp
+SRCS = inventory.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 

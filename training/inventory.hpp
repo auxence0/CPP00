@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   inventory.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/21 15:18:51 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/01 15:11:57 by asauvage         ###   ########.fr       */
+/*   Created: 2026/06/16 10:33:56 by asauvage          #+#    #+#             */
+/*   Updated: 2026/06/16 10:54:54 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
+#ifndef INVENTORY_HPP
+# define INVENTORY_HPP
 
-# include <iostream>
-# include <string>
+#include <iostream>
+#include <string>
+#include <iomanip>
 
-class Contact{
-	private:
-		std::string	firstName_;
-		std::string lastName_;
-		std::string nickname_;
-		std::string phoneNumber_;
-		std::string darkestSecret_;
+class	item{
 	public:
-		Contact();
-		~Contact();
-		void SetInput(std::string input, std::string field);
+		item();
+		~item();
+	private:
+		std::string nom;
+		std::string categorie;
+		std::string quantite;
+		std::string etat;
+};
+
+class	inventory{
+	public:
+		void get_item(item item);
+		void fill_item();
+		inventory();
+		~inventory();
+	private:
+		item items[5];
+		int	index;
 };
 
 #endif
