@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:51 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/01 15:11:57 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/07/01 19:19:38 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ class Contact{
 		std::string lastName_;
 		std::string nickname_;
 		std::string phoneNumber_;
-		std::string darkestSecret_;
+		std::string darkestestSecret_;
 	public:
 		Contact();
 		~Contact();
 		void SetInput(std::string input, std::string field);
+		std::string	getfield(std::string field);
 };
 
 #endif

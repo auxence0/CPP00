@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 15:58:10 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/01 13:59:29 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/07/01 19:22:10 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@ int main(void)
 	PhoneBook	Phone_Book;
 
 	std::string	line;
-	std::cout << "Entre une cmd : ADD, SEARCH, EXIT" << std::endl;
+	std::cout << "Entre une cmd : ADD, SEARCH, EXIT" << "\n";
 	while (std::getline(std::cin, line))
 	{
 		if (line == "EXIT")
-			exit (1);
-		if (line == "ADD")
+			return (1);
+		else if (line == "ADD")
 			Phone_Book.add();
-		std::cout << "Entre une cmd : ADD, SEARCH, EXIT" << std::endl;
+		else if (line == "SEARCH")
+			Phone_Book.search();
+		std::cout << "Entre une cmd : ADD, SEARCH, EXIT" << "\n";
 	}
+	if (std::cin.eof())
+		return (1);
 }
