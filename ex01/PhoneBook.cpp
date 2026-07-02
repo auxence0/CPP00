@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:22 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/01 19:32:41 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/07/02 12:41:23 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,16 +88,21 @@ void	PhoneBook::add() {
 void	PhoneBook::search() {
 	int	i(0);
 	display_all_contact();
-	std::cout << "Choose your contact index between 0 and " << (max_i - (max_i != 7 && max_i != 0)) << "\n";
+	if (!max_i)
+	{
+		std::cout << "There is no contact\n";
+		return ;
+	}
+	else
+		std::cout << "Choose your contact index between 0 and " << (max_i - (max_i != 7)) << "\n";
 	std::cin >> i;
 	while (std::cin.fail())
 	{
-		std::cin.ignore(1000, '\n');
 		std::cin.clear();
+		std::cin.ignore(1000, '\n');
 		std::cin >> i;
-		std::cout << "ecris\n";
 	}
 	std::cin.ignore(1000, '\n');
-	if (i < max_i)
+	if (i <= (max_i - (max_i != 7)))
 		display_contact(i);
 }
