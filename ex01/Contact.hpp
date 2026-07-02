@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:51 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/01 19:19:38 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/07/02 16:00:39 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Contact{
 		Contact();
 		~Contact();
 		void SetInput(std::string input, std::string field);
-		std::string	getfield(std::string field);
+		std::string	getfield(std::string field) const ;
 };
 
 #endif

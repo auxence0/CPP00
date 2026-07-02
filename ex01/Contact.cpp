@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 13:57:20 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/01 19:19:38 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/07/02 16:00:26 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Contact::~Contact() {
 	return ;
 }
 
-std::string	Contact::getfield(std::string field) {
+std::string	Contact::getfield(std::string field) const {
 	if (field == "first name")
 		return (firstName_);
 	else if (field == "last name")

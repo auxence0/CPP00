@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:22 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/02 12:41:23 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/07/02 15:45:53 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	PhoneBook::add() {
 		contact[index].SetInput(input, fields[i]);
 	}
 	index++;
-	max_i = std::min(max_i + 1, 7);
+	max_i = std::min(max_i + 1, 8);
 	return ;
 }
 
@@ -94,7 +94,7 @@ void	PhoneBook::search() {
 		return ;
 	}
 	else
-		std::cout << "Choose your contact index between 0 and " << (max_i - (max_i != 7)) << "\n";
+		std::cout << "Choose your contact index between 0 and " << (max_i - 1) << "\n";
 	std::cin >> i;
 	while (std::cin.fail())
 	{
@@ -103,6 +103,6 @@ void	PhoneBook::search() {
 		std::cin >> i;
 	}
 	std::cin.ignore(1000, '\n');
-	if (i <= (max_i - (max_i != 7)))
+	if (i < max_i)
 		display_contact(i);
 }

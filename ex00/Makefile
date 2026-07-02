@@ -6,13 +6,13 @@
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/21 11:41:44 by asauvage          #+#    #+#              #
-#    Updated: 2026/06/11 13:15:10 by asauvage         ###   ########.fr        #
+#    Updated: 2026/07/01 17:21:27 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 NAME = megaphone
 
