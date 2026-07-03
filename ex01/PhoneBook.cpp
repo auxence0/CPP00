@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:22 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/02 15:45:53 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/07/03 12:21:40 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,13 +96,13 @@ void	PhoneBook::search() {
 	else
 		std::cout << "Choose your contact index between 0 and " << (max_i - 1) << "\n";
 	std::cin >> i;
-	while (std::cin.fail())
+	while (std::cin.fail() || i < 0 || i >= max_i)
 	{
 		std::cin.clear();
 		std::cin.ignore(1000, '\n');
+		std::cout << "Invalid index\n";
 		std::cin >> i;
 	}
 	std::cin.ignore(1000, '\n');
-	if (i < max_i)
-		display_contact(i);
+	display_contact(i);
 }
