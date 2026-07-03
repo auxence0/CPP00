@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:22 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/03 14:00:08 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/07/03 16:05:35 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,8 @@ void	PhoneBook::add() {
 		contact[index].SetInput(input, fields[i]);
 	}
 	index++;
-	max_i = std::min(max_i + 1, 8);
+	if (max_i < 8)
+		max_i++;
 	return ;
 }
 
