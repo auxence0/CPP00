@@ -6,15 +6,17 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:51 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/02 16:00:39 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/07/03 13:47:51 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-#define CONTACT_HPP
+# define CONTACT_HPP
 
 # include <iostream>
 # include <string>
+# include <cstring>
+# include <iomanip>
 
 class Contact{
 	private:

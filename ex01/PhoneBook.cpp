@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:22 by asauvage          #+#    #+#             */
-/*   Updated: 2026/07/03 12:21:40 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/07/03 14:00:08 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,33 @@ std::string	ask_input(std::string input) {
 	return (res);
 }
 
+std::string	format_str(std::string str) {
+	if (str.length() > 10)
+		return (str.substr(0, 9) + ".");
+	return (str);
+}
+
 void	PhoneBook::display_contact(int i) {
-	std::cout << contact[i].getfield("first name");
-	std::cout << " | ";
-	std::cout << contact[i].getfield("last name");
-	std::cout << " | ";
-	std::cout << contact[i].getfield("nick name");
-	std::cout << " | ";
-	std::cout << contact[i].getfield("phone number");
-	std::cout << " | ";
-	std::cout << contact[i].getfield("darkest secret");
-	std::cout << "\n";
+	std::cout << "\n" << "First name: " << contact[i].getfield("first name") << "\n";
+	std::cout << "Last name: " << contact[i].getfield("last name") << "\n";
+	std::cout << "Nick name: " << contact[i].getfield("nick name") << "\n";
+	std::cout << "Phone number: " << contact[i].getfield("phone number") << "\n";
+	std::cout << "Darkest secret: " << contact[i].getfield("darkest secret") << "\n\n";
 }
 
 void	PhoneBook::display_all_contact() {
+	std::cout << "\n" << std::setw(10) << "index" << "|" << std::setw(10) << "First Name" << "|" << std::setw(10) << "Last Name" << "|" << std::setw(10) << "Nick Name\n";
+	 
 	for (int i(0); i < 8 && contact[i].getfield("first name") != ""; ++i)
 	{
-		std::cout << i;
-		std::cout << " | ";
-		std::cout << contact[i].getfield("first name");
-		std::cout << " | ";
-		std::cout << contact[i].getfield("last name");
-		std::cout << " | ";
-		std::cout << contact[i].getfield("nick name");
-		std::cout << "\n";
+		std::cout << std::setw(10) << i;
+		std::cout << "|";
+		std::cout << std::setw(10) << format_str(contact[i].getfield("first name"));
+		std::cout << "|";
+		std::cout << std::setw(10) << format_str(contact[i].getfield("last name"));
+		std::cout << "|";
+		std::cout << std::setw(10) << format_str(contact[i].getfield("nick name"));
+		std::cout << "\n\n";
 	}
 }
 
@@ -96,11 +99,15 @@ void	PhoneBook::search() {
 	else
 		std::cout << "Choose your contact index between 0 and " << (max_i - 1) << "\n";
 	std::cin >> i;
+	if (std::cin.eof())
+		std::exit (1);
 	while (std::cin.fail() || i < 0 || i >= max_i)
 	{
+		if (std::cin.eof())
+			std::exit (1);
 		std::cin.clear();
 		std::cin.ignore(1000, '\n');
-		std::cout << "Invalid index\n";
+		std::cout << "Invalid index	\n";
 		std::cin >> i;
 	}
 	std::cin.ignore(1000, '\n');
