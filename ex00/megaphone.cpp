@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:08:04 by asauvage          #+#    #+#             */
-/*   Updated: 2026/06/11 13:15:40 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/08/03 13:23:59 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ int main(int ac, char **av)
 		int j = 0;
 		while (av[++i])
 		{
+			std::string	str = av[i];
 			j = 0;
-			while (av[i][j])
-				std::cout << char(toupper(av[i][j++]));
+			while (str[j])
+				std::cout << char(toupper(str[j++]));
 		}
 		std::cout << '\n';
 	}
