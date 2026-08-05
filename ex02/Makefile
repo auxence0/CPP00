@@ -6,7 +6,7 @@
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/04 15:14:18 by asauvage          #+#    #+#              #
-#    Updated: 2026/07/04 15:14:48 by asauvage         ###   ########.fr        #
+#    Updated: 2026/08/05 16:18:51 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = Account
 
 SRCS = Account.cpp \
-	   test.cpp \
+	   tests.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 
